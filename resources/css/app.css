@@ -1,0 +1,418 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CONTENDORES */
+
+.flex__container {
+    @apply flex items-center;
+}
+
+.flex__container__center {
+    @apply flex__container justify-center;
+}
+
+.flex__container__between {
+    @apply flex__container justify-between;
+}
+
+.flex__container__end {
+    @apply flex__container justify-end;
+}
+
+.flex__container__col {
+    @apply flex__container flex-col;
+}
+
+.main__container {
+    @apply flex__container h-screen bg-primary overflow-hidden;
+}
+
+.secondary__container {
+    @apply flex__container__col h-screen w-full overflow-hidden bg-secondary;
+}
+
+.view__container {
+    @apply h-full w-full overflow-hidden flex flex-col;
+}
+
+.header__container {
+    @apply flex__container__between;
+}
+
+.content__container {
+    @apply flex-1 overflow-auto;
+}
+
+.footer__container {
+    @apply flex__container__between pt-2;
+}
+
+.grid__container {
+    @apply grid;
+}
+
+.grid__container__4 {
+    @apply grid__container grid-cols-4 gap-2;
+}
+
+.grid__card {
+    @apply w-full bg-white border border-gray-200 rounded-lg shadow;
+}
+
+.grid__card__name {
+    @apply text-xl font-semibold tracking-tight text-gray-900;
+}
+
+.grid__card__price {
+    @apply text-3xl font-bold text-gray-900;
+}
+
+.grid__card .img__container {
+    @apply w-full aspect-square overflow-hidden;
+}
+.grid__card img {
+    @apply rounded-t-lg w-full h-auto;
+}
+/* MENU DE NAVEGACION */
+
+.sidebar {
+    @apply flex flex-col bg-primary transition-all duration-300 h-full absolute md:relative z-[100] sidebar__open;
+}
+
+.sidebar__open {
+    @apply w-full md:w-64;
+}
+
+.sidebar_closed {
+    @apply w-0;
+}
+
+.sidebar__header {
+    @apply p-2 text-primary-text text-center font-bold text-lg;
+}
+.sidebar__content {
+    @apply flex-1 overflow-y-auto overflow-x-hidden;
+}
+.sidebar__footer {
+    @apply flex__container__between;
+}
+
+.profile__menu {
+    @apply absolute bg-primary text-primary-text rounded-md w-full max-w-[180px] bottom-2 left-full ml-2 p-3 space-y-2 z-50;
+}
+
+.topbar {
+    @apply flex__container__between bg-primary-dark text-primary-text w-full p-2;
+}
+
+.topbar__action__slot {
+    @apply flex justify-end items-center space-x-2 flex-1;
+}
+
+.sidebar__submenu__title {
+    @apply text-primary-text uppercase px-3;
+}
+.sidebar__submenu__container {
+    @apply text-sm py-1.5 mb-6;
+}
+.sidebar__submenu__link {
+    @apply text-primary-text cursor-pointer hover:bg-primary-text hover:text-primary px-3 py-1.5 items-center space-x-2 transition-colors duration-100 min-w-full truncate;
+}
+
+/* BUTTONS, LINKS, TITLES, DIVS, PARAGRAPHS, EVERY LABEL*/
+
+.input__container {
+    @apply flex__container relative w-full max-w-[500px];
+}
+
+.input {
+    @apply p-2 rounded-md w-full text-black disabled:bg-secondary-light disabled:text-slate-800;
+}
+
+.textarea {
+    @apply p-2 rounded-md w-full resize-none  disabled:bg-secondary-light disabled:text-slate-800;
+}
+
+.input__search {
+    @apply input w-full text-primary-text border border-primary;
+}
+
+.input__icon {
+    @apply w-4 h-4 absolute right-2 cursor-pointer transform hover:scale-125;
+}
+
+.icon {
+    @apply w-6 h-6 min-w-[24px];
+}
+
+.icon__pointer {
+    @apply cursor-pointer hover:scale-125;
+}
+
+.tooltip {
+    @apply hidden opacity-0 absolute -top-full  bg-black text-white py-1 px-2 rounded-md min-w-[70px] w-full max-w-[70px] justify-center items-center hover:hidden text-xs transition-all duration-500;
+}
+.tooltip {
+    left: calc(50% - 90%);
+    top: calc(-5px - 100%);
+}
+
+.button-icon {
+    @apply flex__container space-x-1 rounded-md p-2 text-sm;
+}
+
+.button {
+    @apply inline-flex items-center px-4 py-2 rounded-md font-semibold text-xs transition ease-in-out duration-150;
+}
+
+.button-info {
+    @apply bg-info hover:bg-info-hover border border-info disabled:bg-opacity-40 disabled:bg-disabled disabled:text-disabled-text disabled:border-disabled;
+}
+
+.button-success {
+    @apply bg-success text-success-text hover:bg-success-hover border border-success disabled:bg-opacity-40 disabled:bg-disabled disabled:text-disabled-text disabled:border-disabled;
+}
+
+.button-warning {
+    @apply bg-warning text-warning-text hover:bg-warning-hover border border-warning disabled:bg-opacity-40 disabled:bg-disabled disabled:text-disabled-text disabled:border-disabled;
+}
+
+.button-danger {
+    @apply bg-danger hover:bg-danger-hover text-secondary-text border border-danger disabled:bg-opacity-40 disabled:bg-disabled disabled:text-disabled-text disabled:border-disabled;
+}
+
+.button-primary {
+    @apply bg-primary hover:bg-primary-dark text-secondary-text border border-primary disabled:bg-opacity-40 disabled:bg-disabled disabled:text-disabled-text disabled:border-disabled;
+}
+
+.button-link {
+    @apply text-info hover:text-info-dark underline;
+}
+
+.button-secondary {
+    @apply text-white bg-gray-900 border border-gray-900;
+}
+/* TABLES */
+
+.table {
+    @apply w-full;
+}
+
+.table th {
+    @apply bg-primary text-white p-2 border border-primary;
+}
+
+.table tr {
+    @apply even:bg-secondary-light odd:bg-secondary last:border last:border-b last:border-secondary-dark hover:bg-secondary-dark;
+}
+
+.table td {
+    @apply p-[2px] border-x border-secondary-dark;
+}
+
+.column {
+    @apply bg-primary text-white p-2 text-left w-1/2 border border-secondary first:border-t-primary last:border-b-primary;
+}
+
+.row {
+    @apply p-2 w-1/2 border bg-secondary text-black border-primary text-end;
+}
+
+/* PAGINACION */
+.pag__previous__next__link {
+    @apply relative inline-flex items-center p-2 text-sm font-medium border leading-5 transition ease-in-out duration-150 rounded-md mx-1;
+}
+
+.pag__previous__next__link__inactive {
+    @apply text-gray-400 bg-secondary-light  border-gray-300 cursor-default;
+}
+
+.pag__previous__next__link__active {
+    @apply text-gray-700 hover:text-gray-500 bg-white border border-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 cursor-pointer;
+}
+
+.pag__link {
+    @apply p-2 px-4 rounded cursor-pointer list-none;
+}
+
+.pag__link__active {
+    @apply pag__link bg-primary text-secondary-text;
+}
+
+.pag__link__inactive {
+    @apply pag__link bg-secondary-light text-primary-text;
+}
+
+/* MODALES */
+
+.modal__header {
+    @apply text-lg font-medium text-white bg-primary px-4 py-2 m-0 text-left rounded-t-md;
+}
+.modal__content {
+    @apply px-4 py-4 space-y-4 text-sm text-black;
+}
+
+.modal__content .input,
+.modal__content .select {
+    @apply w-full rounded-md;
+}
+
+.modal__footer {
+    @apply flex flex-row justify-end px-6 py-4 space-x-4 border-t;
+}
+
+.error {
+    @apply flex__container space-x-2 text-sm text-red-600 mt-2;
+}
+
+.info__container {
+    @apply flex__container space-x-4 bg-indigo-500 border-indigo-700 text-white p-4 rounded-md;
+}
+
+.info__container svg {
+    @apply w-8 h-8;
+}
+
+.img__circle {
+    @apply w-10 h-10 rounded-full;
+}
+
+/* COMPONENTE DE COMRPAS DEVEHICULOS */
+
+.side__container {
+    @apply h-full space-y-4 p-2 w-[400px] max-w-[400px];
+}
+
+/* POS */
+
+.pos__container {
+    @apply flex w-full h-full flex-1 space-x-2;
+}
+.pos__main__container {
+    @apply flex flex-col flex-1 space-y-2;
+}
+
+.pos__header {
+    @apply w-full;
+}
+
+.pos__content {
+    @apply flex-1 overflow-auto w-full flex flex-col;
+}
+
+.pos__side__container {
+    @apply flex flex-col h-full w-[250px] bg-secondary-hover;
+}
+
+.pos__side__container h2 {
+    @apply bg-primary text-secondary-text text-center py-2;
+}
+
+.pos__button__container {
+    @apply flex-1 p-2 space-y-2;
+}
+
+.pos__button__container button {
+    @apply w-full space-x-2 p-3 text-primary-text;
+}
+
+.pos__side__footer__container {
+    @apply p-2 space-y-2;
+}
+
+.card {
+    @apply bg-primary text-center text-secondary-text p-2 rounded-md;
+}
+
+.card hr,
+.card__danger hr {
+    @apply my-1;
+}
+
+.card p,
+.card__danger p {
+    @apply text-lg;
+}
+
+.card__danger {
+    @apply bg-danger text-center text-secondary-text p-2 rounded-md;
+}
+
+.pos__table__container {
+    @apply flex-1;
+}
+
+/* PAYMENTS */
+
+.card__payment {
+    @apply border rounded-md shadow bg-primary text-secondary-text flex items-center space-x-4 p-4 hover:bg-primary-dark cursor-pointer;
+}
+
+.cho-container label {
+    @apply bg-primary text-secondary-text;
+}
+
+.auth__card {
+    @apply rounded-md bg-white relative z-10 w-full max-w-[600px] shadow-2xl overflow-hidden;
+}
+
+.input__select__container {
+    @apply relative w-full;
+}
+
+.input__select__container .select__container {
+    @apply w-full max-h-[200px] overflow-auto shadow-xl rounded-b-md absolute bg-white z-[100];
+}
+
+.input__select__container .select__option {
+    @apply w-full text-primary p-2 cursor-pointer flex space-x-2 items-center;
+}
+
+.input__select__container .select__option__inactive {
+    @apply w-full text-primary p-2 flex space-x-2 items-center;
+}
+
+.input__select__container .select__option__active {
+    @apply bg-primary text-secondary-text;
+}
+
+.input__select__container .select__option img {
+    @apply rounded-md border;
+}
+
+.selected__vehicle__container {
+    @apply bg-primary text-secondary-text overflow-hidden rounded-md w-full p-2 space-x-2 flex justify-between items-center;
+}
+
+.selected__vehicle__container img {
+    @apply rounded-md w-10 aspect-square;
+}
+
+.selected__part__container {
+    @apply flex__container__between space-x-2 bg-primary text-white p-2 rounded-md;
+}
+
+.selected__part__container img {
+    @apply rounded-md w-10 aspect-square;
+}
+
+.disabled {
+    @apply text-slate-400;
+}
+
+.notification {
+    @apply absolute right-1 bottom-1 w-full max-w-[500px] rounded-md shadow p-4 space-x-4 flex__container h-[100px] text-white text-xl z-[1000] overflow-hidden;
+}
+
+.notification__icon__container {
+    @apply h-[100px] w-[50px] flex__container__center;
+}
+
+.notification__icon__container svg {
+    @apply w-10 h-10;
+}
+
+.notification__text__container {
+    @apply overflow-auto h-full flex__container;
+}
